@@ -1,11 +1,18 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MovieCardAPI.Data;
+using MovieCardAPI.Extensions;
+using System.Reflection;
 
 namespace MovieCardAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<MovieCardAPIContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MovieCardAPIContext") ?? throw new InvalidOperationException("Connection string 'MovieCardAPIContext' not found.")));
 
             // Add services to the container.
 
@@ -21,6 +28,7 @@ namespace MovieCardAPI
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                await app.SeedDataAsync();
             }
 
             app.UseHttpsRedirection();
