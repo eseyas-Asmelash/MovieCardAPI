@@ -12,8 +12,8 @@ using MovieCardAPI.Data;
 namespace MovieCardAPI.Migrations
 {
     [DbContext(typeof(MovieCardAPIContext))]
-    [Migration("20240828140433_initialize")]
-    partial class initialize
+    [Migration("20240901090353_Iniialze")]
+    partial class Iniialze
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

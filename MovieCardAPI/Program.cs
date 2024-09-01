@@ -15,9 +15,12 @@ namespace MovieCardAPI
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MovieCardAPIContext") ?? throw new InvalidOperationException("Connection string 'MovieCardAPIContext' not found.")));
 
             // Add services to the container.
+            
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

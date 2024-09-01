@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MovieCardAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class initialize : Migration
+    public partial class Iniialze : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
