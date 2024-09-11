@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MovieCardAPI.Data;
-using MovieCardAPI.Extensions;
+using MovieInfrustructure.Data;
+using MovieInfrustructure.Extensions;
+using MoviePresentation.Controllers;
 using System.Reflection;
+using System.Reflection.Metadata;
 
 namespace MovieCardAPI
 {
@@ -15,9 +17,10 @@ namespace MovieCardAPI
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MovieCardAPIContext") ?? throw new InvalidOperationException("Connection string 'MovieCardAPIContext' not found.")));
 
             // Add services to the container.
-            
+            builder.Services.AddControllers()
+                .AddApplicationPart(typeof(MoviesController).Assembly);
 
-            builder.Services.AddControllers();
+           // builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));

@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace MovieCardAPI.Migrations
+namespace MovieInfrustructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Iniialze : Migration
+    public partial class initialize : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

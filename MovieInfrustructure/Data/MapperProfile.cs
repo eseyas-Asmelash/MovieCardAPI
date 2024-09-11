@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using MovieCardAPI.Models.DTOs;
-using MovieCardAPI.Models.Entities;
+using MovieShared.DTOs;
+using MovieModels.Entities;
 
-namespace MovieCardAPI.Data
+namespace MovieInfrustructure.Data
 {
     public class MappingProfile : Profile
     {

@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MovieCardAPI.Data;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MovieInfrustructure.Data;
 
-namespace MovieCardAPI.Extensions
+namespace MovieInfrustructure.Extensions
 {
     public static class WebbapplicationsExtensions
     {

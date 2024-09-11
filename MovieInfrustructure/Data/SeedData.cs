@@ -1,5 +1,5 @@
-﻿using MovieCardAPI.Data;
-using MovieCardAPI.Models.Entities;
+﻿using MovieInfrustructure.Data;
+using MovieModels.Entities;
 
 public class SeedData
 {

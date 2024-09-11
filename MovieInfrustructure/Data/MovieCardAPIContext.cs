@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MovieCardAPI.Models.Entities;
+using MovieModels.Entities;
 
-namespace MovieCardAPI.Data
+namespace MovieInfrustructure.Data
 {
     public class MovieCardAPIContext : DbContext
     {

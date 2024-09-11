@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace MovieCardAPI.Models.Entities
+namespace MovieModels.Entities
 {
     public class Movie
     {

@@ -1,4 +1,4 @@
-﻿namespace MovieCardAPI.Models.Entities
+﻿namespace MovieModels.Entities
 {
     public class ContactInformation
     {

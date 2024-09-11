@@ -6,14 +6,13 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MovieCardAPI.Data;
-using MovieCardAPI.Models.DTOs;
-using MovieCardAPI.Models.Entities;
-using NuGet.Versioning;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using MovieInfrustructure.Data;
+using MovieShared.DTOs;
+using MovieModels.Entities;
+using MovieInfrustructure.Repository;
 
-namespace MovieCardAPI.Controllers
-{
+namespace MoviePresentation.Controllers
+{/*
     [ApiController]
     [Route("api/[controller]")]
     public class MoviesController : ControllerBase
@@ -29,7 +28,7 @@ namespace MovieCardAPI.Controllers
 
         // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MovieDto>>> GetMovies(string search = null)
+        public async Task<ActionResult<IEnumerable<MovieDto>>> GetMovies(string search = "")
         {
 
             IQueryable<Movie> movies = _context.Movies
@@ -143,6 +142,65 @@ namespace MovieCardAPI.Controllers
         private bool MovieExists(int id)
         {
             return _context.Movies.Any(e => e.Id == id);
+        }
+    }*/
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MoviesController : ControllerBase
+    {
+        private readonly IMovieRepository<Movie> _movieRepository;
+
+        public MoviesController(IMovieRepository<Movie> movieRepository)
+        {
+            _movieRepository = movieRepository;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<Movie>> GetMovies()
+        {
+            return await _movieRepository.GetAllAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Movie>> GetMovie(int id)
+        {
+            var movie = await _movieRepository.GetByIdAsync(id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+            return movie;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Movie>> CreateMovie(Movie movie)
+        {
+            await _movieRepository.AddAsync(movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateMovie(int id, Movie movie)
+        {
+            if (id != movie.Id)
+            {
+                return BadRequest();
+            }
+
+            await _movieRepository.UpdateAsync(movie);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMovie(int id)
+        {
+            var success = await _movieRepository.DeleteAsync(id);
+            if (!success)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
     }
 }

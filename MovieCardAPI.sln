@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCardAPI", "MovieCardAPI\MovieCardAPI.csproj", "{B491789D-BCAB-41E3-8CF8-A7A913CED15B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCardAPI", "MovieCardAPI\MovieCardAPI.csproj", "{B491789D-BCAB-41E3-8CF8-A7A913CED15B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25} = {3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieModels", "MovieModels\MovieModels.csproj", "{FBA0CFDC-32C3-4157-B6AD-5E2FD3169CEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviePresentation", "MoviePresentation\MoviePresentation.csproj", "{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShared", "MovieShared\MovieShared.csproj", "{E00ECD56-F01F-4575-B668-C3B6C1717366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieInfrustructure", "MovieInfrustructure\MovieInfrustructure.csproj", "{B1970FD2-8062-491D-BBDD-3F4CB7FD2F5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,22 @@ Global
 		{B491789D-BCAB-41E3-8CF8-A7A913CED15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B491789D-BCAB-41E3-8CF8-A7A913CED15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B491789D-BCAB-41E3-8CF8-A7A913CED15B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA0CFDC-32C3-4157-B6AD-5E2FD3169CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA0CFDC-32C3-4157-B6AD-5E2FD3169CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA0CFDC-32C3-4157-B6AD-5E2FD3169CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA0CFDC-32C3-4157-B6AD-5E2FD3169CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCD3AAB-E532-44BE-96C6-EF28C20E7E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E00ECD56-F01F-4575-B668-C3B6C1717366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00ECD56-F01F-4575-B668-C3B6C1717366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00ECD56-F01F-4575-B668-C3B6C1717366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00ECD56-F01F-4575-B668-C3B6C1717366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1970FD2-8062-491D-BBDD-3F4CB7FD2F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1970FD2-8062-491D-BBDD-3F4CB7FD2F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1970FD2-8062-491D-BBDD-3F4CB7FD2F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1970FD2-8062-491D-BBDD-3F4CB7FD2F5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
